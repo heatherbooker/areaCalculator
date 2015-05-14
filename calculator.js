@@ -33,6 +33,9 @@ function whichNumber(buttonID) {
         case 0:
             numberRepresentedByID = '0'
             break;
+        case period:
+            numberRepresentedByID = '.'
+            break;
         case divide:
             numberRepresentedByID = '/'
             break;
