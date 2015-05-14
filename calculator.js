@@ -53,6 +53,7 @@ function whichNumber(buttonID) {
 
 function assembleString() {
     currentNumber += numberRepresentedByID;
+    document.getElementById("display").innerHTML = currentNumber;
 }
 
 function calculate() {
@@ -60,18 +61,26 @@ function calculate() {
     alert(answer);
 }
 
+function clear() {
+    currentNumber = "";
+    document.getElementById("display").innerHTML = currentNumber;
+}
+
 $(document).ready(function() {
 
 
-    $("button:not(#equals)").click(function(curNum, numRepped) {
+    $("button:not(#equals)").click(function() {
         $(whichNumber("button"));
         $(assembleString);
-        alert(currentNumber);
     });
 
 
     $("#equals").click(function(currentNumber) {
         $(calculate);
     });
+
+    $("#clear").click(function() {
+        $(clear);
+    })
 
 });
