@@ -1,6 +1,5 @@
 var currentNumber = "";
-currentNumber = '2+3*7'
-var numberRepresentedByID = ''
+var numberRepresentedByID = '';
 
 function whichNumber(buttonID) {
     switch (buttonID) {
@@ -46,25 +45,33 @@ function whichNumber(buttonID) {
         case plus:
             numberRepresentedByID = '+'
             break;
+        case equals:
+            numberRepresentedByID = ''
+            break;
     };
 };
 
 function assembleString() {
     currentNumber += numberRepresentedByID;
 }
+
+function calculate() {
+    var answer = eval(currentNumber);
+    alert(answer);
+}
+
 $(document).ready(function() {
 
 
-    $("button").click(function(curNum, numRepped) {
+    $("button:not(#equals)").click(function(curNum, numRepped) {
         $(whichNumber("button"));
-        alert(numberRepresentedByID);
         $(assembleString);
         alert(currentNumber);
     });
 
 
     $("#equals").click(function(currentNumber) {
-        eval(currentNumber);
+        $(calculate);
     });
 
 });
