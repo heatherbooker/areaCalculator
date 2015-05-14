@@ -1,0 +1,47 @@
+<!-- 
+
+/* note: eval is awful... never ever use it in real code */
+
+// eval is a function that takes a string
+// the string should be actual javascript code
+// eval then runs that code
+
+var immutableString = "8*7+9; console.log('pi'); for(var i =0; i <9;  i++){console.log('hello goose')};
+
+eval(immutableString)
+
+//make a regular ol calculator. -->
+
+<html>
+
+	<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src='calculator.js'></script>
+	</head>
+
+	<body>
+		<div id='numPad'>
+		  <button id='7' onclick="whichNumber(7)">7</button>
+	   	<button id='8' onclick="whichNumber(8)">8</button>
+		  <button id='9' onclick="whichNumber(9)">9</button>
+      <button id='divide' class='operator' onclick="whichNumber(divide)">/</button><br>
+		  <button id='4' onclick="whichNumber(4)">4</button>
+		  <button id='5' onclick="whichNumber(5)">5</button>
+		  <button id='6' onclick="whichNumber(6)">6</button>
+      <button id='multiply' class='operator' onclick="whichNumber(multiply)">x</button><br>
+		  <button id='1' onclick="whichNumber(1)">1</button>
+		  <button id='2' onclick="whichNumber(2)">2</button>
+		  <button id='3' onclick="whichNumber(3)">3</button>
+      <button id='subtract' class='operator' onclick="whichNumber(subtract)">-</button><br>
+		  <button id='0'>0</button>
+		  <button id='period' onclick="whichNumber(period)">.</button>
+		  <button id='equals'>=</button>
+      <button id='plus' class='operator'  onclick="whichNumber(plus)">+</button>
+	 </div>
+   <div id='displayBar'>
+   </div>
+
+
+	</body>
+
+</html>
